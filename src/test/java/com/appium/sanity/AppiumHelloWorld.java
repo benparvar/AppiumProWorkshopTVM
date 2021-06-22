@@ -12,7 +12,7 @@ import java.net.URL;
 public class AppiumHelloWorld {
 
     private AndroidDriver driver;
-    private String APP = "https://github.com/cloudgrey-io/the-app/releases/download/v1.7.1/TheApp-v1.7.1.apk";
+    private String APP = "https://github.com/ju-padawan/apkTeste/releases/download/apkTeste/calculator-7-8-271241277.apk";
 
     @Before
     public void setUp() throws MalformedURLException {
@@ -36,6 +36,10 @@ public class AppiumHelloWorld {
     @Test
     public void appiumHelloWorld() throws InterruptedException {
         Thread.sleep(10000);
-        driver.findElementByAccessibilityId("Login Screen").click();
+        driver.findElementById("com.google.android.calculator:id/digit_9").click();
+        driver.findElementByAccessibilityId("multiply").click();
+        driver.findElementById("com.google.android.calculator:id/digit_2").click();
+        driver.findElementByAccessibilityId("equals").click();
+        Thread.sleep(10000);
     }
 }
