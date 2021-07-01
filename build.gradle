@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter-api:5.7.0',
+            'org.junit.vintage:junit-vintage-engine:5.8.0-M1',
+
+    )
+    testRuntimeOnly(
+            'org.junit.jupiter:junit-jupiter-engine:5.7.0',
+    )
+
+    implementation(
+            'org.seleniumhq.selenium:selenium-remote-driver:3.141.59',
+            'io.appium:java-client:7.0.0',
+    )
+
+}
+
+test {
+    useJUnitPlatform()
+}
